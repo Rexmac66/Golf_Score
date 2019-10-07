@@ -1,0 +1,530 @@
+{
+  "Holes": [
+    {
+      "Divisions": [
+        [
+          {
+            "Length": 422,
+            "Par": 5,
+            "Stroke": 13
+          }
+        ],
+        [
+          {
+            "Length": 422,
+            "Par": 5,
+            "Stroke": 13
+          },
+          {
+            "Length": 421,
+            "Par": 5,
+            "Stroke": 5
+          }
+        ]
+      ],
+      "Title": "The Gums",
+      "Number": 1,
+      "Lat": -41.231405,
+      "Long": 175.475284
+    },
+    {
+      "Divisions": [
+        [
+          {
+            "Length": 479,
+            "Par": 5,
+            "Stroke": 5
+          }
+        ],
+        [
+          {
+            "Length": 479,
+            "Par": 5,
+            "Stroke": 5
+          },
+          {
+            "Length": 408,
+            "Par": 5,
+            "Stroke": 11
+          }
+        ]
+      ],
+      "Title": "Long View",
+      "Number": 2,
+      "Lat": -41.228718,
+      "Long": 175.480222
+    },
+    {
+      "Divisions": [
+        [
+          {
+            "Length": 343,
+            "Par": 4,
+            "Stroke": 3
+          }
+        ],
+        [
+          {
+            "Length": 343,
+            "Par": 4,
+            "Stroke": 3
+          },
+          {
+            "Length": 340,
+            "Par": 4,
+            "Stroke": 1
+          }
+        ]
+      ],
+      "Title": "Boomerang",
+      "Number": 3,
+      "Lat": -41.226906,
+      "Long": 175.477335
+    },
+    {
+      "Title": "Waiuru",
+      "Number": 4,
+      "Lat": -41.228882,
+      "Long": 175.478566,
+      "Divsions": [
+        [
+          {
+            "Length": 318,
+            "Par": 4,
+            "Stroke": 11
+          }
+        ],
+        [
+          {
+            "Length": 318,
+            "Par": 4,
+            "Stroke": 11
+          },
+          {
+            "Length": 244,
+            "Par": 4,
+            "Stroke": 15
+          }
+        ]
+      ],
+      "Men": {
+        
+      },
+      "Women": {
+        
+      }
+    },
+    {
+      "Divsions": [
+        [
+          {
+            "Length": 340,
+            "Par": 4,
+            "Stroke": 1
+          }
+        ],
+        [
+          {
+            "Length": 340,
+            "Par": 4,
+            "Stroke": 1
+          },
+          {
+            "Length": 244,
+            "Par": 4,
+            "Stroke": 15
+          }
+        ]
+      ],
+      "Title": "Bull Hill",
+      "Number": 5,
+      "Lat": -41.230931,
+      "Long": 175.475565
+    },
+    {
+      "Divsions": [
+        [
+          {
+            "Length": 113,
+            "Par": 3,
+            "Stroke": 17
+          }
+        ],
+        [
+          {
+            "Length": 113,
+            "Par": 3,
+            "Stroke": 17
+          },
+          {
+            "Length": 113,
+            "Par": 3,
+            "Stroke": 18
+          }
+        ]
+      ],
+      "Title": "Three Oaks",
+      "Number": 6,
+      "Lat": -41.230045,
+      "Long": 175.476103
+    },
+    {
+      "Title": "Martins",
+      "Number": 7,
+      "Lat": -41.228855,
+      "Long": 175.472929,
+      "Divisions": [
+        [
+          {
+            "Length": 308,
+            "Par": 4,
+            "Stroke": 9
+          }
+        ],
+        [
+          {
+            "Length": 308,
+            "Par": 4,
+            "Stroke": 9
+          },
+          {
+            "Length": 304,
+            "Par": 4,
+            "Stroke": 6
+          }
+        ]
+      ],
+      "Men": {
+        
+      },
+      "Women": {
+        
+      }
+    },
+    {
+      "Title": "The Glade",
+      "Number": 8,
+      "Lat": -41.228487,
+      "Long": 175.471913,
+      "Divisions": [
+        [
+          {
+            "Length": 118,
+            "Par": 3,
+            "Stroke": 15
+          }
+        ],
+        [
+          {
+            "Length": 118,
+            "Par": 3,
+            "Stroke": 15
+          },
+          {
+            "Length": 119,
+            "Par": 3,
+            "Stroke": 17
+          }
+        ]
+      ]
+    },
+    {
+      "Title": "Clubhouse",
+      "Number": 9,
+      "Lat": -41.225684,
+      "Long": 175.474534,
+      "Divisions": [
+        [
+          {
+            "Length": 330,
+            "Par": 4,
+            "Stroke": 7
+          }
+        ],
+        [
+          {
+            "Length": 330,
+            "Par": 4,
+            "Stroke": 7
+          },
+          {
+            "Length": 321,
+            "Par": 4,
+            "Stroke": 3
+          }
+        ]
+      ]
+    },
+    {
+      "Title": "Ruffan Glen",
+      "Number": 10,
+      "Lat": -41.227589,
+      "Long": 175.471733,
+      "Divsions": [
+        [
+          {
+            "Length": 326,
+            "Par": 4,
+            "Stroke": 4
+          }
+        ],
+        [
+          {
+            "Length": 326,
+            "Par": 4,
+            "Stroke": 4
+          },
+          {
+            "Length": 314,
+            "Par": 4,
+            "Stroke": 2
+          }
+        ]
+      ]
+    },
+    {
+      "Title": "Rotten Row",
+      "Number": 11,
+      "Lat": -41.225338,
+      "Long": 175.474014,
+      "Divisions": [
+        [
+          {
+            "Length": 393,
+            "Par": 5,
+            "Stroke": 18
+          }
+        ],
+        [
+          {
+            "Length": 393,
+            "Par": 5,
+            "Stroke": 18
+          },
+          {
+            "Length": 369,
+            "Par": 5,
+            "Stroke": 10
+          }
+        ]
+      ]
+    },
+    {
+      "Title": "Hinakura",
+      "Number": 12,
+      "Lat": -41.22587,
+      "Long": 175.475463,
+      "Divisions": [
+        [
+          {
+            "Length": 187,
+            "Par": 3,
+            "Stroke": 2
+          }
+        ],
+        [
+          {
+            "Length": 187,
+            "Par": 3,
+            "Stroke": 2
+          },
+          {
+            "Length": 142,
+            "Par": 3,
+            "Stroke": 14
+          }
+        ]
+      ]
+    },
+    {
+      "Title": "The Terrace",
+      "Number": 13,
+      "Lat": -41.22862,
+      "Long": 175.473638,
+      "Divisions": [
+        [
+          {
+            "Length": 344,
+            "Par": 4,
+            "Stroke": 8
+          }
+        ],
+        [
+          {
+            "Length": 291,
+            "Par": 4,
+            "Stroke": 9
+          },
+          {
+            "Length": 422,
+            "Par": 5,
+            "Stroke": 13
+          }
+        ]
+      ]
+    },
+    {
+      "Title": "Oasis",
+      "Number": 14,
+      "Lat": -41.226847,
+      "Long": 175.475705,
+      "Divisions": [
+        [
+          {
+            "Length": 285,
+            "Par": 4,
+            "Stroke": 10
+          }
+        ],
+        [
+          {
+            "Length": 285,
+            "Par": 4,
+            "Stroke": 12
+          },
+          {
+            "Length": 285,
+            "Par": 4,
+            "Stroke": 4
+          }
+        ]
+      ]
+    },
+    {
+      "Title": "Tote",
+      "Number": 15,
+      "Lat": -41.229012,
+      "Long": 175.474778,
+      "Divisions": [
+        [
+          {
+            "Length": 294,
+            "Par": 4,
+            "Stroke": 12
+          }
+        ],
+        [
+          {
+            "Length": 294,
+            "Par": 4,
+            "Stroke": 12
+          },
+          {
+            "Length": 264,
+            "Par": 4,
+            "Stroke": 12
+          }
+        ]
+      ]
+    },
+    {
+      "Title": "Tablelands",
+      "Number": 16,
+      "Lat": -41.229698,
+      "Long": 175.476016,
+      "Divisions": [
+        [
+          {
+            "Length": 139,
+            "Par": 3,
+            "Stroke": 16
+          }
+        ],
+        [
+          {
+            "Length": 139,
+            "Par": 3,
+            "Stroke": 16
+          },
+          {
+            "Length": 138,
+            "Par": 3,
+            "Stroke": 16
+          }
+        ]
+      ]
+    },
+    {
+      "Title": "The Hook",
+      "Number": 17,
+      "Lat": -41.226234,
+      "Long": 175.475993,
+      "Divisions": [
+        [
+          {
+            "Length": 438,
+            "Par": 5,
+            "Stroke": 14
+          }
+        ],
+        [
+          {
+            "Length": 397,
+            "Par": 5,
+            "Stroke": 14
+          },
+          {
+            "Length": 422,
+            "Par": 5,
+            "Stroke": 13
+          }
+        ]
+      ]
+    },
+    {
+      "Title": "Ingleside",
+      "Number": 18,
+      "Lat": -41.228112,
+      "Long": 175.472418,
+      "Divisions": [
+        [
+          {
+            "Length": 369,
+            "Par": 4,
+            "Stroke": 6
+          }
+        ],
+        [
+          {
+            "Length": 369,
+            "Par": 4,
+            "Stroke": 6
+          },
+          {
+            "Length": 368,
+            "Par": 5,
+            "Stroke": 13
+          }
+        ]
+      ]
+    }
+  ],
+  "Divisions": [
+    {
+      "Title": "Men",
+      "Tees": [
+        {
+          "Title": "White",
+          "Slope": 113,
+          "Par": 72
+        }
+      ]
+    },
+    {
+      "Title": "Women",
+      "Tees": [
+        {
+          "Title": "White",
+          "Slope": 124,
+          "Par": 72
+        },
+        {
+          "Title": "Yellow",
+          "Slope": 120,
+          "Par": 73
+        }
+      ]
+    }
+  ],
+  "Name": "Martinborough"
+}

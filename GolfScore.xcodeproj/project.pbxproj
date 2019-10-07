@@ -1,0 +1,466 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CD163A0F15B8C92100CEF3ED /* UserData.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD163A0E15B8C92100CEF3ED /* UserData.plist */; };
+		CD3B90F91A1ADEB3001BF02D /* ScoreTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3B90F81A1ADEB3001BF02D /* ScoreTable.xib */; };
+		CD3B90FC1A1ADFA9001BF02D /* ScoreTable.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3B90FB1A1ADFA9001BF02D /* ScoreTable.m */; };
+		CD41E0531BB26F8000C581B9 /* Players.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD41E0521BB26F8000C581B9 /* Players.plist */; };
+		CD6A22FB15AA9E76000F878C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD6A22FA15AA9E76000F878C /* UIKit.framework */; };
+		CD6A22FD15AA9E76000F878C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD6A22FC15AA9E76000F878C /* Foundation.framework */; };
+		CD6A22FF15AA9E76000F878C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD6A22FE15AA9E76000F878C /* CoreGraphics.framework */; };
+		CD6A230715AA9E76000F878C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6A230615AA9E76000F878C /* main.m */; };
+		CD6A230B15AA9E76000F878C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6A230A15AA9E76000F878C /* AppDelegate.m */; };
+		CD6A230E15AA9E76000F878C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6A230D15AA9E76000F878C /* ViewController.m */; };
+		CD6EE00B1BD0B14F0007A8A7 /* BlankCourse.JSON in Resources */ = {isa = PBXBuildFile; fileRef = CD6EE0091BD0B14F0007A8A7 /* BlankCourse.JSON */; };
+		CD6EE00C1BD0B14F0007A8A7 /* Martinborough.JSON in Resources */ = {isa = PBXBuildFile; fileRef = CD6EE00A1BD0B14F0007A8A7 /* Martinborough.JSON */; };
+		CD9919091BB24D430029625F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD9919081BB24D430029625F /* Default-568h@2x.png */; };
+		CD99190B1BB2548B0029625F /* PlayersTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD99190A1BB2548B0029625F /* PlayersTable.xib */; };
+		CD99190E1BB254E30029625F /* Players.m in Sources */ = {isa = PBXBuildFile; fileRef = CD99190D1BB254E30029625F /* Players.m */; };
+		CD992F6215AB92E500F414A8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD992F5C15AB92E500F414A8 /* InfoPlist.strings */; };
+		CD992F6315AB92E500F414A8 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD992F5E15AB92E500F414A8 /* ViewController.xib */; };
+		CD992F6A15AB97D600F414A8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CD992F6915AB97D600F414A8 /* Icon.png */; };
+		CD992F6C15AB97E000F414A8 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD992F6B15AB97E000F414A8 /* Icon@2x.png */; };
+		CDA03DF01B79960D00829A24 /* Test.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDA03DEF1B79960D00829A24 /* Test.xib */; };
+		CDA38F901BB4E435003E6F71 /* OnePlayer.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDA38F8F1BB4E435003E6F71 /* OnePlayer.plist */; };
+		CDB5A7AE1A1419D1002B70DD /* 19-gear white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB5A7AD1A1419D1002B70DD /* 19-gear white@2x.png */; };
+		CDB7F3421C5B13B1005F6128 /* TableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDB7F3411C5B13B1005F6128 /* TableCell.xib */; };
+		CDE98F281B8BFAAE0020B891 /* Courses.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE98F261B8BFAAE0020B891 /* Courses.m */; };
+		CDE98F291B8BFAAE0020B891 /* Courses.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDE98F271B8BFAAE0020B891 /* Courses.xib */; };
+		CDF362DE1A2E79FC0090CA80 /* Calendar.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF362DD1A2E79FC0090CA80 /* Calendar.m */; };
+		CDF362E01A2E81DE0090CA80 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDF362DF1A2E81DE0090CA80 /* EventKit.framework */; };
+		CDF753351A311FBB008624A1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDF753341A311FBB008624A1 /* CoreLocation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CD0D91AD234AE516009637A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ViewController.xib; sourceTree = "<group>"; };
+		CD163A0E15B8C92100CEF3ED /* UserData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserData.plist; sourceTree = "<group>"; };
+		CD3B90F81A1ADEB3001BF02D /* ScoreTable.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScoreTable.xib; sourceTree = "<group>"; };
+		CD3B90FA1A1ADF61001BF02D /* ScoreTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreTable.h; sourceTree = "<group>"; };
+		CD3B90FB1A1ADFA9001BF02D /* ScoreTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreTable.m; sourceTree = "<group>"; };
+		CD41E0521BB26F8000C581B9 /* Players.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Players.plist; sourceTree = "<group>"; };
+		CD6A22F615AA9E76000F878C /* GolfScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GolfScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD6A22FA15AA9E76000F878C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CD6A22FC15AA9E76000F878C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CD6A22FE15AA9E76000F878C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CD6A230215AA9E76000F878C /* GolfScore-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GolfScore-Info.plist"; sourceTree = "<group>"; };
+		CD6A230415AA9E76000F878C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CD6A230615AA9E76000F878C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CD6A230815AA9E76000F878C /* GolfScore-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GolfScore-Prefix.pch"; sourceTree = "<group>"; };
+		CD6A230915AA9E76000F878C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CD6A230A15AA9E76000F878C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CD6A230C15AA9E76000F878C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CD6A230D15AA9E76000F878C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CD6EE0091BD0B14F0007A8A7 /* BlankCourse.JSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BlankCourse.JSON; sourceTree = "<group>"; };
+		CD6EE00A1BD0B14F0007A8A7 /* Martinborough.JSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Martinborough.JSON; sourceTree = "<group>"; };
+		CD9919081BB24D430029625F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		CD99190A1BB2548B0029625F /* PlayersTable.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayersTable.xib; sourceTree = "<group>"; };
+		CD99190C1BB254B00029625F /* Players.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Players.h; sourceTree = "<group>"; };
+		CD99190D1BB254E30029625F /* Players.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Players.m; sourceTree = "<group>"; };
+		CD992F5D15AB92E500F414A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
+		CD992F5F15AB92E500F414A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = ViewController.xib; sourceTree = "<group>"; };
+		CD992F6915AB97D600F414A8 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
+		CD992F6B15AB97E000F414A8 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
+		CDA03DEF1B79960D00829A24 /* Test.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Test.xib; sourceTree = "<group>"; };
+		CDA38F8F1BB4E435003E6F71 /* OnePlayer.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = OnePlayer.plist; sourceTree = "<group>"; };
+		CDB5A7AD1A1419D1002B70DD /* 19-gear white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-gear white@2x.png"; sourceTree = "<group>"; };
+		CDB7F3411C5B13B1005F6128 /* TableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableCell.xib; sourceTree = "<group>"; };
+		CDE98F251B8BFAAE0020B891 /* Courses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Courses.h; sourceTree = "<group>"; };
+		CDE98F261B8BFAAE0020B891 /* Courses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Courses.m; sourceTree = "<group>"; };
+		CDE98F271B8BFAAE0020B891 /* Courses.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Courses.xib; sourceTree = "<group>"; };
+		CDF362DC1A2E79D50090CA80 /* Calendar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Calendar.h; sourceTree = "<group>"; };
+		CDF362DD1A2E79FC0090CA80 /* Calendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calendar.m; sourceTree = "<group>"; };
+		CDF362DF1A2E81DE0090CA80 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		CDF753341A311FBB008624A1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CD6A22F315AA9E76000F878C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDF753351A311FBB008624A1 /* CoreLocation.framework in Frameworks */,
+				CDF362E01A2E81DE0090CA80 /* EventKit.framework in Frameworks */,
+				CD6A22FB15AA9E76000F878C /* UIKit.framework in Frameworks */,
+				CD6A22FD15AA9E76000F878C /* Foundation.framework in Frameworks */,
+				CD6A22FF15AA9E76000F878C /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CD2A7C301FC637A4006784CE /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				CDA03DEF1B79960D00829A24 /* Test.xib */,
+				CD3B90F81A1ADEB3001BF02D /* ScoreTable.xib */,
+				CD6A230F15AA9E76000F878C /* ViewController.xib */,
+				CDB7F3411C5B13B1005F6128 /* TableCell.xib */,
+				CDE98F271B8BFAAE0020B891 /* Courses.xib */,
+				CD99190A1BB2548B0029625F /* PlayersTable.xib */,
+			);
+			name = XIBs;
+			sourceTree = "<group>";
+		};
+		CD6A22EB15AA9E76000F878C = {
+			isa = PBXGroup;
+			children = (
+				CD6A230015AA9E76000F878C /* GolfScore */,
+				CD6A22F915AA9E76000F878C /* Frameworks */,
+				CD6A22F715AA9E76000F878C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CD6A22F715AA9E76000F878C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD6A22F615AA9E76000F878C /* GolfScore.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD6A22F915AA9E76000F878C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CDF753341A311FBB008624A1 /* CoreLocation.framework */,
+				CDF362DF1A2E81DE0090CA80 /* EventKit.framework */,
+				CD6A22FA15AA9E76000F878C /* UIKit.framework */,
+				CD6A22FC15AA9E76000F878C /* Foundation.framework */,
+				CD6A22FE15AA9E76000F878C /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD6A230015AA9E76000F878C /* GolfScore */ = {
+			isa = PBXGroup;
+			children = (
+				CD6A230915AA9E76000F878C /* AppDelegate.h */,
+				CD6A230A15AA9E76000F878C /* AppDelegate.m */,
+				CD6A230C15AA9E76000F878C /* ViewController.h */,
+				CD6A230D15AA9E76000F878C /* ViewController.m */,
+				CD3B90FA1A1ADF61001BF02D /* ScoreTable.h */,
+				CD3B90FB1A1ADFA9001BF02D /* ScoreTable.m */,
+				CDE98F251B8BFAAE0020B891 /* Courses.h */,
+				CDE98F261B8BFAAE0020B891 /* Courses.m */,
+				CD99190C1BB254B00029625F /* Players.h */,
+				CD99190D1BB254E30029625F /* Players.m */,
+				CDF362DC1A2E79D50090CA80 /* Calendar.h */,
+				CDF362DD1A2E79FC0090CA80 /* Calendar.m */,
+				CD2A7C301FC637A4006784CE /* XIBs */,
+				CD6A230115AA9E76000F878C /* Supporting Files */,
+			);
+			path = GolfScore;
+			sourceTree = "<group>";
+		};
+		CD6A230115AA9E76000F878C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CD992F5B15AB92E500F414A8 /* en.lproj */,
+				CD992F6B15AB97E000F414A8 /* Icon@2x.png */,
+				CD992F6915AB97D600F414A8 /* Icon.png */,
+				CDB5A7AD1A1419D1002B70DD /* 19-gear white@2x.png */,
+				CD6A230215AA9E76000F878C /* GolfScore-Info.plist */,
+				CD9919081BB24D430029625F /* Default-568h@2x.png */,
+				CD6A230315AA9E76000F878C /* InfoPlist.strings */,
+				CD6A230615AA9E76000F878C /* main.m */,
+				CD6A230815AA9E76000F878C /* GolfScore-Prefix.pch */,
+				CD163A0E15B8C92100CEF3ED /* UserData.plist */,
+				CD41E0521BB26F8000C581B9 /* Players.plist */,
+				CDA38F8F1BB4E435003E6F71 /* OnePlayer.plist */,
+				CD6EE0091BD0B14F0007A8A7 /* BlankCourse.JSON */,
+				CD6EE00A1BD0B14F0007A8A7 /* Martinborough.JSON */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CD992F5B15AB92E500F414A8 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				CD992F5C15AB92E500F414A8 /* InfoPlist.strings */,
+				CD992F5E15AB92E500F414A8 /* ViewController.xib */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CD6A22F515AA9E76000F878C /* GolfScore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD6A231415AA9E76000F878C /* Build configuration list for PBXNativeTarget "GolfScore" */;
+			buildPhases = (
+				CD6A22F215AA9E76000F878C /* Sources */,
+				CD6A22F315AA9E76000F878C /* Frameworks */,
+				CD6A22F415AA9E76000F878C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GolfScore;
+			productName = GolfScore;
+			productReference = CD6A22F615AA9E76000F878C /* GolfScore.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CD6A22ED15AA9E76000F878C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				TargetAttributes = {
+					CD6A22F515AA9E76000F878C = {
+						DevelopmentTeam = 8SZRVZ76E9;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = CD6A22F015AA9E76000F878C /* Build configuration list for PBXProject "GolfScore" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CD6A22EB15AA9E76000F878C;
+			productRefGroup = CD6A22F715AA9E76000F878C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CD6A22F515AA9E76000F878C /* GolfScore */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CD6A22F415AA9E76000F878C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD6EE00B1BD0B14F0007A8A7 /* BlankCourse.JSON in Resources */,
+				CD6EE00C1BD0B14F0007A8A7 /* Martinborough.JSON in Resources */,
+				CD3B90F91A1ADEB3001BF02D /* ScoreTable.xib in Resources */,
+				CDB7F3421C5B13B1005F6128 /* TableCell.xib in Resources */,
+				CDE98F291B8BFAAE0020B891 /* Courses.xib in Resources */,
+				CDA38F901BB4E435003E6F71 /* OnePlayer.plist in Resources */,
+				CDB5A7AE1A1419D1002B70DD /* 19-gear white@2x.png in Resources */,
+				CD9919091BB24D430029625F /* Default-568h@2x.png in Resources */,
+				CD99190B1BB2548B0029625F /* PlayersTable.xib in Resources */,
+				CD41E0531BB26F8000C581B9 /* Players.plist in Resources */,
+				CD992F6215AB92E500F414A8 /* InfoPlist.strings in Resources */,
+				CD992F6315AB92E500F414A8 /* ViewController.xib in Resources */,
+				CDA03DF01B79960D00829A24 /* Test.xib in Resources */,
+				CD992F6A15AB97D600F414A8 /* Icon.png in Resources */,
+				CD992F6C15AB97E000F414A8 /* Icon@2x.png in Resources */,
+				CD163A0F15B8C92100CEF3ED /* UserData.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CD6A22F215AA9E76000F878C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD99190E1BB254E30029625F /* Players.m in Sources */,
+				CD6A230715AA9E76000F878C /* main.m in Sources */,
+				CD6A230B15AA9E76000F878C /* AppDelegate.m in Sources */,
+				CDF362DE1A2E79FC0090CA80 /* Calendar.m in Sources */,
+				CD6A230E15AA9E76000F878C /* ViewController.m in Sources */,
+				CDE98F281B8BFAAE0020B891 /* Courses.m in Sources */,
+				CD3B90FC1A1ADFA9001BF02D /* ScoreTable.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CD6A230315AA9E76000F878C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD6A230415AA9E76000F878C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CD6A230F15AA9E76000F878C /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD0D91AD234AE516009637A9 /* Base */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+		CD992F5C15AB92E500F414A8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD992F5D15AB92E500F414A8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CD992F5E15AB92E500F414A8 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD992F5F15AB92E500F414A8 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CD6A231215AA9E76000F878C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CD6A231315AA9E76000F878C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CD6A231515AA9E76000F878C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GolfScore/GolfScore-Prefix.pch";
+				INFOPLIST_FILE = "GolfScore/GolfScore-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Click-Suite.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CD6A231615AA9E76000F878C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GolfScore/GolfScore-Prefix.pch";
+				INFOPLIST_FILE = "GolfScore/GolfScore-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Click-Suite.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CD6A22F015AA9E76000F878C /* Build configuration list for PBXProject "GolfScore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD6A231215AA9E76000F878C /* Debug */,
+				CD6A231315AA9E76000F878C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD6A231415AA9E76000F878C /* Build configuration list for PBXNativeTarget "GolfScore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD6A231515AA9E76000F878C /* Debug */,
+				CD6A231615AA9E76000F878C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CD6A22ED15AA9E76000F878C /* Project object */;
+}
