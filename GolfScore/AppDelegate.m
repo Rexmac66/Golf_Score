@@ -283,6 +283,7 @@ CLLocation *zeroLocation;
                       objectForKey:@"Tees"] objectAtIndex:[[playersGame objectForKey:@"Tees"]intValue]]
                     objectForKey:@"Slope"]floatValue];
     float courseHandicap = roundf(playersHandicapIndex * (slope/113.0));
+    // NSLog(@"---+++ Player Index: %f slope: %f Crse H/C: %f", playersHandicapIndex, slope, courseHandicap);
     float courseHandicapInt  =  floorf(courseHandicap /18.0);
     float handicapModulo = fmodf(courseHandicap, 18.0);
     
@@ -332,7 +333,7 @@ CLLocation *zeroLocation;
 
 -(void)swipeL:(int)playerViewNumber // flip to higher numbered player
 {
-    NSLog(@"---+++ Delegate Swipe Left %i", playerViewNumber);
+   // NSLog(@"---+++ Delegate Swipe Left %i", playerViewNumber);
     if (numberOfPlayers == 1){
         return;
     }
@@ -1020,7 +1021,7 @@ CLLocation *zeroLocation;
             [courseNames addObject:trimmedCourse];
         }
     }
-   // NSLog(@"---+++ Courses: \n%@", courseNames);
+    NSLog(@"---+++ Courses: \n%@", courseNames);
    // return courses; // now in externaly referenced CourseNames
 }
 
@@ -1048,6 +1049,17 @@ CLLocation *zeroLocation;
     if (!result ) {
         NSLog(@"---!!! File Write Error");
     }
+}
+
+-(void)deleteCourse:(NSString *)courseName;
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDir = [paths objectAtIndex:0];
+    NSString *docsFilePath = [documentsDir stringByAppendingPathComponent:courseName];
+    NSString *completeFilePath = [docsFilePath stringByAppendingPathExtension:@"JSON"];
+    NSLog(@"---+++ deleting:%@", completeFilePath);
+    NSError *error = nil;
+    [[NSFileManager defaultManager] removeItemAtPath:completeFilePath error:&error];
 }
 
 -(void)writeCurrentCourse
@@ -1079,7 +1091,6 @@ CLLocation *zeroLocation;
     } else {
         NSLog(@"---!!! File ERROR %@", error);
     }
-
 }
 
 

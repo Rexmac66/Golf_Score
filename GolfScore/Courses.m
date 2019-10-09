@@ -29,7 +29,8 @@ NSUInteger teesInDivision; // number of Tees in this division
 NSUInteger pickedTees;     // picked tees (White/Yellow)
 NSUInteger pickedCourseDivision;
 NSUInteger pickedSlope;
-NSString *savedCourseName; // save course name so we can revert
+NSString *savedCourseName; // save course name so we can revert to the course we had selected
+NSString *revertCourseName; // keep name for delete or cancel
 
 #pragma mark - Table
 
@@ -176,9 +177,6 @@ NSString *savedCourseName; // save course name so we can revert
 
             break;
     }
-    
-    
-    
     return tView;
 }
 
@@ -186,7 +184,6 @@ NSString *savedCourseName; // save course name so we can revert
 {
     switch (pickerView.tag) {
         case 0:                 // 0 = Men / 1 = Women
-
             pickedCourseDivision = row;
              teesInDivision = [[[[appCDelegate.courseData objectForKey:@"Divisions"] objectAtIndex:pickedCourseDivision] objectForKey:@"Tees"] count] ;
             [teesPicker reloadAllComponents];
@@ -229,7 +226,7 @@ NSString *savedCourseName; // save course name so we can revert
     parTextBox.text = [NSString stringWithFormat:@"Par Calc:%i",parTotal];
 }
 
--(void)SaveChanges  // save changed slope as we go, 'cause there are many facits -- cancel will reload the course
+-(void)SaveChanges  // save changed slope as we go, 'cause there are many facets -- cancel will reload the course
 {
     NSString *pickedDivisionTitle = [NSString stringWithString:[[[appCDelegate.courseData objectForKey:@"Divisions"] objectAtIndex:pickedCourseDivision]    objectForKey:@"Title"]];
     NSString *pickedTeesName = [NSString stringWithString:[[[[[appCDelegate.courseData objectForKey:@"Divisions"] objectAtIndex:pickedCourseDivision]
@@ -255,7 +252,8 @@ NSString *savedCourseName; // save course name so we can revert
 -(void)editCourse
 {
     [appCDelegate getCourse:[appCDelegate.courseNames objectAtIndex:editCourse ]]; // course is now current course
-    NSLog(@"---+++ Editing Course: %@", [appCDelegate.courseNames objectAtIndex:editCourse ]);
+    revertCourseName = [appCDelegate.courseNames objectAtIndex:editCourse ];
+    NSLog(@"---+++ Editing Course: %@",revertCourseName);
    // NSLog(@"---+++ Course Data: \n%@", [appCDelegate.courseData objectForKey:@"Divisions"]);
     [overlay setFrame:CGRectMake(0, self.view.frame.size.height, overlay.frame.size.width, overlay.frame.size.height)];
     overlay.hidden = NO;
@@ -320,11 +318,16 @@ NSString *savedCourseName; // save course name so we can revert
     [self dissmissCourseOvelay];
     NSString *trimmedString = [editedCourseName stringByTrimmingCharactersInSet:
                                [NSCharacterSet whitespaceCharacterSet]];
+    // this will write the course with new name - the old one is still there
     [appCDelegate.courseData setObject:trimmedString forKey:@"Name"];
     [appCDelegate writeCurrentCourse];
-    [appCDelegate getAllCourses];   // incase name has changed, which is currently then new course
+   // NSLog(@"---+++ %@ %@", trimmedString, revertCourseName);
+    if (![trimmedString isEqualToString:revertCourseName]) {  // has name changed? - delete old one
+        NSLog(@"---+++ Delete: %@", revertCourseName);
+        [appCDelegate deleteCourse:revertCourseName];
+    }
+    [appCDelegate getAllCourses];   // in case name has changed, which it has, so save as new course
     [courseTable reloadData];
-    
 }
 
 -(void)dissmissCourseOvelay

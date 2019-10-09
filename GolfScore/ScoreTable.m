@@ -194,9 +194,9 @@ AppDelegate *appSDelegate;
         UILabel *statsLabel;
          statsLabel = (UILabel *)[cell viewWithTag:6];
         if (numberOfHolesPlayed < 18) {
-            statsLabel.text =       [NSString stringWithFormat:@" Crse Hdcap:%i (%i holes:%i)", courseHandicap, numberOfHolesPlayed, handicapAccum] ;
+            statsLabel.text =       [NSString stringWithFormat:@" Crse H/cap:%i (%i holes:%i)", courseHandicap, numberOfHolesPlayed, handicapAccum] ;
         } else {
-            statsLabel.text =       [NSString stringWithFormat:@" Crse Hdcap:%i", handicapAccum] ;
+            statsLabel.text =       [NSString stringWithFormat:@" Crse H/cap:%i", handicapAccum] ;
         }
         //cell.detailTextLabel.font = [UIFont systemFontOfSize:17];
         statsLabel = (UILabel *)[cell viewWithTag:7];
@@ -218,7 +218,7 @@ AppDelegate *appSDelegate;
         statsLabel.layer.borderColor = [UIColor whiteColor].CGColor;
         statsLabel.layer.borderWidth = 1.0;
         
-       // NSLog(@"---+++ Course Handicap %i", courseHandicap);
+        NSLog(@"---+++ Course Handicap %i", courseHandicap);
        // NSLog(@"---+++ Eagles:%i, Birdies:%i, Pars:%i, Bogies:%i, DblBogies:%i", eagles, birdies, pars, bogies, doubleBogies);
     //[NSString stringWithFormat:@"Gross:%i, AdjGross: %i Handicap:%i \n Nett:%i Adjnett:%i", gross, adjGross, handicapAccum, gross - handicapAccum, adjGross - handicapAccum];
     } else if (indexPath.row == 23){   // Save
@@ -399,7 +399,7 @@ AppDelegate *appSDelegate;
    // strokeNum = [parStrokeHandicap objectForKey:@"Stroke"];
    // parNum = [parStrokeHandicap objectForKey:@"Par"];
     
-    // NSLog(@"---+++ Gome: %@",playersGame);
+    // NSLog(@"---+++ Game: %@",playersGame);
     
     for (int holeCtr = 0; holeCtr < 18; holeCtr++) {
         int strokeNumber =  [[[[playersGame objectForKey:@"Scores"]objectAtIndex:holeCtr]objectForKey:@"Strokes"]intValue];
@@ -415,13 +415,14 @@ AppDelegate *appSDelegate;
         
         parStrokeHandicap = [appSDelegate handicapForPlayer:currentPlayer holeNumber:holeCtr];
         courseHandicap +=  [[parStrokeHandicap objectForKey:@"Handicap"]intValue];
+        NSLog(@"---+++ Course Handicap:%i %@", courseHandicap, parStrokeHandicap);
         if (holeCtr <9) {
             frontNineStrokes += totalStrokes ;
             frontNinePutts   += puttNumber;
             frontNinePenalties  += penaltyNumber;
             frontNineStableford += stablefordNumber;
             if (strokeNumber > 0 ){
-//                parStrokeHandicap = [appSDelegate handicapForPlayer:currentPlayer holeNumber:holeCtr];
+                // parStrokeHandicap = [appSDelegate handicapForPlayer:currentPlayer holeNumber:holeCtr];
                 numberOfHolesPlayed ++;
                 gross += totalStrokes;
                  handicapForHole = [[parStrokeHandicap objectForKey:@"Handicap"]intValue];
@@ -461,7 +462,7 @@ AppDelegate *appSDelegate;
             backNinePenalties  += penaltyNumber;
             backNineStableford  += stablefordNumber;
             if (strokeNumber > 0 ){
-//                parStrokeHandicap = [appSDelegate handicapForPlayer:currentPlayer holeNumber:holeCtr];
+                // parStrokeHandicap = [appSDelegate handicapForPlayer:currentPlayer holeNumber:holeCtr];
                 numberOfHolesPlayed ++;
                 gross += totalStrokes;
                  handicapForHole = [[parStrokeHandicap objectForKey:@"Handicap"]intValue];
@@ -522,6 +523,7 @@ AppDelegate *appSDelegate;
    // NSLog(@"---+++  Gross:%i, AdjGross: %i Handicap:%i Nett:%i Adjnett:%i", gross, adjGross, stablefordAccum, gross - stablefordAccum, adjGross - stablefordAccum);
     
    // NSLog(@"---+++ Gross:%i, Handicap:%i, Nett:%i", adjGross, courseHandicapInt, adjGross - courseHandicapInt );
+    
     [scoreTableView reloadData];
     
 }

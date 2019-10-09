@@ -27,6 +27,7 @@
 -(void)writeCurrentCourse;
 -(void)getCourse:(NSString *)courseName;
 -(void)getAllCourses;
+-(void)deleteCourse:(NSString *)courseName;
 
 -(NSDictionary*)handicapForPlayer:(int)playerNumber holeNumber:(int)holeNumber;
 
