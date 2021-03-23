@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>${PRODUCT_NAME}</string>
+	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIcons</key>
@@ -28,10 +28,14 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Need GPS for distance to pin, and stroke distance. GPS has - 20min non-use timeout</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Permission to save your round to the Calendar</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Needed for distance to pin, stroke distance - GPS had 20min timeout</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Need GPS for distance to pin, and stroke distance. GPS has - 20min non-use timeout</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Needed for distance to pin, stroke distance - GPS had 20min timeout</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
@@ -46,9 +50,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Needed for distance to pin, stroke distance - GPS had 20min timeout</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Needed for distance to pin, stroke distance - GPS had 20min timeout</string>
 </dict>
 </plist>

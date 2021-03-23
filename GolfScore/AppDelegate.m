@@ -189,12 +189,12 @@ CLLocation *zeroLocation;
     return YES;
 }
 
--(void)loadCourse // load current course, else
+-(void)loadCourse // load current course, else copy one from Bundle
 {
      [self getAllCourses];
-   // NSLog(@"---+++ Found: %i Coures", courses.count);
+    // NSLog(@"---+++ Found: %lu Coures", (unsigned long)courseNames.count);
     if (courseNames.count == 0){   // no courses so load Martinborough and copy it to documents directory
-        NSLog(@"---+++ Copy Martinborough course from Bundle");
+        NSLog(@"---+++ Copying Martinborough course from Bundle");
         NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Martinborough" ofType:@"JSON"];
         // Load the file into an NSData object called JSONData
         NSError *error = nil;
@@ -206,18 +206,19 @@ CLLocation *zeroLocation;
                                                      options:NSJSONReadingMutableContainers
                                                        error:&error];
         [userData setObject:[courseData objectForKey:@"Name"] forKey:@"CurrentCourse"];
-        [self writeCurrentCourse];  // write it to directory
+        [self writeCurrentCourse];  // and write bundle to directory
        [self saveData];   // and save user data -- This is the Case where app is terminated before a save (i.e. using XCode)
     } else {  // load previous course
         NSString *currentCourse = [userData objectForKey:@"CurrentCourse"];
         if (currentCourse.length > 0) { // load current course
            // NSLog(@"---+++ Courses: %@",courses);
-            NSLog(@"---+++ Current course: %@", currentCourse);
+            NSLog(@"---+++ Current Course: %@", currentCourse);
             [self getCourse:currentCourse];
         } else {
-            NSLog(@"---+++ No Course Name ERROR!!!"); 
+            NSLog(@"---+++ No Course Name ERROR!!!");
         }
     }
+    // NSLog(@"---+++ Course Data:%@",courseData);
 }
 
 -(void)getAllPlayers // startup players, if not in Docs directory, copy from bundle
@@ -230,8 +231,8 @@ CLLocation *zeroLocation;
     // exists = NO;  // reload the plist
     if (exists) {
         playersArray = [NSMutableArray arrayWithContentsOfFile:filePath];
-       // NSLog(@"---+++ Got players list:\n%@", playersArray);
-        NSLog(@"---+++ Got players list");
+        // NSLog(@"---+++ Got players list:\n%@", playersArray);
+        NSLog(@"---+++ Got %lu players", (unsigned long)playersArray.count);
     } else {
         NSString *path = [[NSBundle mainBundle] pathForResource:@"Players" ofType:@"plist"];
         playersArray = [NSMutableArray arrayWithContentsOfFile:path];
@@ -246,24 +247,65 @@ CLLocation *zeroLocation;
             [[[userData objectForKey:@"Game"]objectAtIndex:pointer] setObject:handicap forKey:@"Handicap"];
             [self saveData];
         }
-        
     }
-
 }
+
+-(void)sortPlayersArray           // Alphabetised Name sort
+{
+    NSMutableArray *activePlayerNames = [NSMutableArray new];  // collect all the names
+    [activePlayerNames addObject:[viewController1.playersGame objectForKey:@"Name"]];
+    [activePlayerNames addObject:[viewController2.playersGame objectForKey:@"Name"]];
+    [activePlayerNames addObject:[viewController3.playersGame objectForKey:@"Name"]];
+    [activePlayerNames addObject:[viewController4.playersGame objectForKey:@"Name"]];
+    // NSLog(@"---+++ the names:%@", activePlayerNames);
+
+    NSSortDescriptor *sortByName = [NSSortDescriptor sortDescriptorWithKey:@"Name"
+        ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortByName];
+    NSArray *sortedArray = [playersArray sortedArrayUsingDescriptors:sortDescriptors];
+    playersArray = [[NSMutableArray alloc]initWithArray:sortedArray];
+    // NSLog(@"---+++ Sorted players list:\n%@", playersArray);
+    // Now, point the view controllers to the new index of the names at changed index
+    for (int view = 0; view < 4; view++) {
+        NSString *theName = [activePlayerNames objectAtIndex:view];
+        int thePointer =  [self findPlayerPointer: theName];
+        if (thePointer >= 0) {
+            [self reloadPlayerView:view :thePointer];
+        } else {
+            [self reloadPlayerView:view :0];
+        }
+    }
+}
+
+-(int)findPlayerPointer:(NSString*)playerName {
+    int playerPointer = -1;
+    for (int i = 0; i < playersArray.count; i++){
+        NSComparisonResult result = [[playersArray[i]objectForKey:@"Name"] compare:playerName];
+        if (result == NSOrderedSame) {
+            playerPointer = i;
+            // NSLog(@"---+++ found!: %@ index: %i", playerName, playerPointer);
+        }
+    }
+    if (playerPointer < 0) {
+        NSLog(@"---+++ Not found:%@", playerName);
+    }
+    return playerPointer;
+}
+
 
 -(void)writeAllPlayers
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDir = [paths objectAtIndex:0];
     NSString *filePath = [documentsDir stringByAppendingPathComponent:@"Players"];
+    [self sortPlayersArray];
     [playersArray writeToFile:filePath atomically:NO];
 }
 
-#pragma mark -  handicap and Stableford Calculations
+#pragma mark -  Handicap and Stableford Calculations
 
 -(NSDictionary*)handicapForPlayer:(int)playerNumber holeNumber:(int)holeNumber
 {
-
     NSDictionary *playersGame = [[userData objectForKey:@"Game"]objectAtIndex:playerNumber];
     
     NSNumber *parNum =  [[[[[[courseData objectForKey:@"Holes"]objectAtIndex:holeNumber]objectForKey:@"Divisions"]
@@ -276,14 +318,41 @@ CLLocation *zeroLocation;
                    objectAtIndex:[[playersGame objectForKey:@"Tees"]intValue]]
                   objectForKey:@"Stroke"];
     
-    
    // float playersHandicapIndex = [[[[userData objectForKey:@"Game"]objectAtIndex:currentplayerNumber]objectForKey:@"Handicap"]floatValue];
     float playersHandicapIndex =  [[playersGame objectForKey:@"Handicap"]floatValue];
     float slope = [[[[[[courseData objectForKey:@"Divisions"] objectAtIndex:[[playersGame objectForKey:@"Division"]intValue]]
-                      objectForKey:@"Tees"] objectAtIndex:[[playersGame objectForKey:@"Tees"]intValue]]
+                    objectForKey:@"Tees"] objectAtIndex:[[playersGame objectForKey:@"Tees"]intValue]]
                     objectForKey:@"Slope"]floatValue];
-    float courseHandicap = roundf(playersHandicapIndex * (slope/113.0));
-    // NSLog(@"---+++ Player Index: %f slope: %f Crse H/C: %f", playersHandicapIndex, slope, courseHandicap);
+    // -- New NZ course rating handicap
+    float courseRating = [[[[[[courseData objectForKey:@"Divisions"] objectAtIndex:[[playersGame objectForKey:@"Division"]intValue]]
+                    objectForKey:@"Tees"] objectAtIndex:[[playersGame objectForKey:@"Tees"]intValue]]
+                    objectForKey:@"NZCR"]floatValue];
+   // int newInt = (int)(roundf(courseRating * 10.0));
+   // float newFloat = newInt/ 10.0;
+   // float pickedNZCR = round(courseRating * 10.0);
+   // pickedNZCR = (pickedNZCR) / 10.0 ;
+   // NSLog(@"---+++ NZCR from JSON %f",newFloat);
+    float coursePar = [[[[[[courseData objectForKey:@"Divisions"] objectAtIndex:[[playersGame objectForKey:@"Division"]intValue]]
+                    objectForKey:@"Tees"] objectAtIndex:[[playersGame objectForKey:@"Tees"]intValue]]
+                    objectForKey:@"Par"]floatValue];
+    if (courseRating == 0.0) {
+        courseRating = coursePar;
+        [[[[[courseData objectForKey:@"Divisions"] objectAtIndex:[[playersGame objectForKey:@"Division"]intValue]]
+                        objectForKey:@"Tees"] objectAtIndex:[[playersGame objectForKey:@"Tees"]intValue]]
+         setObject:[NSNumber numberWithFloat:coursePar] forKey:@"NZCR"];
+        [self writeCurrentCourse];
+        NSLog(@"---+++ Writed Course Data: %@", [courseData objectForKey:@"Divisions"]);
+    }
+    float handicapDelta = coursePar - courseRating;
+    NSLog(@"---+++ Par %f Delta: %f", coursePar, handicapDelta);
+    float courseHandicap = roundf((playersHandicapIndex * (slope/113.0) - handicapDelta) * 1.0 ) / 1.0;
+    // float courseHandicap = playersHandicapIndex * (slope/113.0) - handicapDelta;
+    int playerPointer = [[playersGame objectForKey:@"PlayerPointer"]intValue];
+    NSString *playerName = [[playersArray objectAtIndex:playerPointer]objectForKey:@"Name"];
+    if (holeNumber == 0) {
+        NSLog(@"---+++ Player:%i %@ Pointer:%i H/CIndex:%.1f CourseH/C:%.0f  Slope:%.1f  NZCR:%.1f ", playerNumber, playerName, playerPointer, playersHandicapIndex, courseHandicap, slope, courseRating );
+       // NSLog(@"---+++ Player:%@", playersGame);
+    }
     float courseHandicapInt  =  floorf(courseHandicap /18.0);
     float handicapModulo = fmodf(courseHandicap, 18.0);
     
@@ -535,41 +604,100 @@ CLLocation *zeroLocation;
                     completion:NULL];
 }
 
--(void)dissmissPlayers:(int)selectedPlayer // number of player in array
+-(void)reloadPlayerView:(int)viewNumber :(int)selectedPlayer // index of player in PlayersArray
 {
-   // NSLog(@"---+++ Current:%i selected Player:%i",currentplayerNumber, selectedPlayer );
+    // NSLog(@"---+++ Current view:%i selected Player:%i",currentplayerNumber, selectedPlayer );
     if (selectedPlayer >= 0 ){        // -1 no Players selected, just refresh all
-        switch (currentplayerNumber) {
+        switch (viewNumber) {
             case 0:
                [[[userData objectForKey:@"Game"]objectAtIndex:0]setObject:[NSNumber numberWithInt:selectedPlayer] forKey:@"PlayerPointer"];  // saves pointer to Player in PLayersArray
                 viewController1.playersGame = [[userData objectForKey:@"Game"]objectAtIndex:0];
+                [viewController1 refreshPlayer];
                // NSLog(@"---+++ Users Data 0 %@", [[userData objectForKey:@"Game"]objectAtIndex:0]);
                 break;
             case 1:
                [[[userData objectForKey:@"Game"]objectAtIndex:1]setObject:[NSNumber numberWithInt:selectedPlayer] forKey:@"PlayerPointer"];
                 viewController2.playersGame = [[userData objectForKey:@"Game"]objectAtIndex:1];
+                [viewController2 refreshPlayer];
                 break;
             case 2:
                [[[userData objectForKey:@"Game"]objectAtIndex:2]setObject:[NSNumber numberWithInt:selectedPlayer] forKey:@"PlayerPointer"];
                 viewController3.playersGame = [[userData objectForKey:@"Game"]objectAtIndex:2];
+                [viewController3 refreshPlayer];
                 break;
             case 3:
                [[[userData objectForKey:@"Game"]objectAtIndex:3]setObject:[NSNumber numberWithInt:selectedPlayer] forKey:@"PlayerPointer"];
                 viewController4.playersGame = [[userData objectForKey:@"Game"]objectAtIndex:3];
+                [viewController4 refreshPlayer];
                 break;
             case 4:
                [[[userData objectForKey:@"Game"]objectAtIndex:4]setObject:[NSNumber numberWithInt:selectedPlayer] forKey:@"PlayerPointer"];
                 viewController5.playersGame = [[userData objectForKey:@"Game"]objectAtIndex:4];
+                [viewController5 refreshPlayer];
+                break;
+            case -1:
+                [viewController1 refreshPlayer];
+                [viewController2 refreshPlayer];
+                [viewController3 refreshPlayer];
+                [viewController4 refreshPlayer];
+                [viewController5 refreshPlayer];
                 break;
             default:
                 break;
         }
     }
-    [viewController1 refreshPlayer];
-    [viewController2 refreshPlayer];
-    [viewController3 refreshPlayer];
-    [viewController4 refreshPlayer];
-    [viewController5 refreshPlayer];
+}
+
+
+// ---- dississ the view of all players, set selected player for this view )-1 for do nothing return
+-(void)dissmissPlayers:(int)selectedPlayer // index of player in PlayersArray
+    {
+    // NSLog(@"---+++ Current view:%i selected Player:%i",currentplayerNumber, selectedPlayer );
+    if (selectedPlayer >= 0 ){        // -1 no Players selected, just refresh all
+        switch (currentplayerNumber) {
+            case 0:
+               [[[userData objectForKey:@"Game"]objectAtIndex:0]setObject:[NSNumber numberWithInt:selectedPlayer] forKey:@"PlayerPointer"];  // saves pointer to Player in PLayersArray
+                viewController1.playersGame = [[userData objectForKey:@"Game"]objectAtIndex:0];
+                [viewController1 refreshPlayer];
+               // NSLog(@"---+++ Users Data 0 %@", [[userData objectForKey:@"Game"]objectAtIndex:0]);
+                break;
+            case 1:
+               [[[userData objectForKey:@"Game"]objectAtIndex:1]setObject:[NSNumber numberWithInt:selectedPlayer] forKey:@"PlayerPointer"];
+                viewController2.playersGame = [[userData objectForKey:@"Game"]objectAtIndex:1];
+                [viewController2 refreshPlayer];
+                break;
+            case 2:
+               [[[userData objectForKey:@"Game"]objectAtIndex:2]setObject:[NSNumber numberWithInt:selectedPlayer] forKey:@"PlayerPointer"];
+                viewController3.playersGame = [[userData objectForKey:@"Game"]objectAtIndex:2];
+                [viewController3 refreshPlayer];
+                break;
+            case 3:
+               [[[userData objectForKey:@"Game"]objectAtIndex:3]setObject:[NSNumber numberWithInt:selectedPlayer] forKey:@"PlayerPointer"];
+                viewController4.playersGame = [[userData objectForKey:@"Game"]objectAtIndex:3];
+                [viewController4 refreshPlayer];
+                break;
+            case 4:
+               [[[userData objectForKey:@"Game"]objectAtIndex:4]setObject:[NSNumber numberWithInt:selectedPlayer] forKey:@"PlayerPointer"];
+                viewController5.playersGame = [[userData objectForKey:@"Game"]objectAtIndex:4];
+                [viewController5 refreshPlayer];
+                break;
+            case -1:
+                [viewController1 refreshPlayer];
+                [viewController2 refreshPlayer];
+                [viewController3 refreshPlayer];
+                [viewController4 refreshPlayer];
+                [viewController5 refreshPlayer];
+                break;
+            default:
+                break;
+        }
+    }
+    
+//    [viewController1 refreshPlayer];
+//    [viewController2 refreshPlayer];
+//    [viewController3 refreshPlayer];
+//    [viewController4 refreshPlayer];
+//    [viewController5 refreshPlayer];
     
 //   // NSLog(@"---+++ Got player: %@", [[playersArray objectAtIndex:selectedPlayer]objectForKey:@"Name"]);
 //    NSString *playerName = [[playersArray objectAtIndex:selectedPlayer]objectForKey:@"Name"];
@@ -1087,7 +1215,7 @@ CLLocation *zeroLocation;
                                                        error:&error];
         [courseData setObject:courseName forKey:@"Name"];
         [userData setObject:[courseData objectForKey:@"Name"] forKey:@"CurrentCourse"];
-       // NSLog(@"---+++ Got Course %@", courseData);
+        // NSLog(@"---+++ Current Course Data: %@", [courseData objectForKey:@"Divisions"]);
     } else {
         NSLog(@"---!!! File ERROR %@", error);
     }

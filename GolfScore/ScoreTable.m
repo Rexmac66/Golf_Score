@@ -415,7 +415,7 @@ AppDelegate *appSDelegate;
         
         parStrokeHandicap = [appSDelegate handicapForPlayer:currentPlayer holeNumber:holeCtr];
         courseHandicap +=  [[parStrokeHandicap objectForKey:@"Handicap"]intValue];
-        NSLog(@"---+++ Course Handicap:%i %@", courseHandicap, parStrokeHandicap);
+        // NSLog(@"---+++ Course Handicap:%i %@", courseHandicap, parStrokeHandicap);
         if (holeCtr <9) {
             frontNineStrokes += totalStrokes ;
             frontNinePutts   += puttNumber;

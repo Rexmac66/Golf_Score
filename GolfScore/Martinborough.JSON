@@ -500,7 +500,8 @@
           ],
           "Title" : "White",
           "Slope" : 113,
-          "Par" : 72
+          "Par" : 72,
+          "NZCR" : 69.3
         }
       ]
     },
@@ -515,7 +516,8 @@
           ],
           "Title" : "Yellow",
           "Slope" : 120,
-          "Par" : 73
+          "Par" : 73,
+          "NZCR" : 72.2
         },
         {
           "TeeColor" : [
@@ -525,7 +527,8 @@
           ],
           "Title" : "White",
           "Slope" : 124,
-          "Par" : 73
+          "Par" : 73,
+          "NZCR" : 75.2
         }
       ]
     }

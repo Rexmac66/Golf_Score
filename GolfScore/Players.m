@@ -234,7 +234,7 @@ NSUInteger editPlayer;
     return 1;
 }
 
--(double)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
+-(CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
 {
     switch (pickerView.tag) {
         case 0:
@@ -257,14 +257,14 @@ NSUInteger editPlayer;
             return 2;
             break;
         case 1:     // Handicap
-            return 45;
+            return 55;
             break;
         case 2:     // decimal of handicap
             return 10;
             break;
         case 3:     // Tees  // this will be for the Current Course
-            return [[[[appPDelegate.courseData objectForKey:@"Divisions"] objectAtIndex:pickedDivision]
-                    objectForKey:@"Tees"]count];
+           return [[[[appPDelegate.courseData objectForKey:@"Divisions"] objectAtIndex:pickedDivision]
+                   objectForKey:@"Tees"]count];
             break;
         default:
             return 1;
@@ -294,13 +294,14 @@ NSUInteger editPlayer;
             tView.text = [sexStrings objectAtIndex:row ];
             break;
         case 1:
-            tView.font = [UIFont boldSystemFontOfSize:40.0];
-            tView.textAlignment = NSTextAlignmentRight;
-            tView.text = [NSString stringWithFormat:@" %i", (int)row ];
+            tView.font = [UIFont boldSystemFontOfSize:30.0];
+            tView.textAlignment = NSTextAlignmentCenter;
+            tView.text = [NSString stringWithFormat:@"%i  ", (int)row ];
             break;
         case 2:
-            tView.font = [UIFont boldSystemFontOfSize:40.0];
-            tView.text = [NSString stringWithFormat:@".%i",(int)row ];
+            tView.font = [UIFont boldSystemFontOfSize:30.0];
+            tView.textAlignment = NSTextAlignmentLeft;
+            tView.text = [NSString stringWithFormat:@"  .%i",(int)row ];
             break;
         case 3:
           //  tView.font = [UIFont boldSystemFontOfSize:40.0];
@@ -345,7 +346,7 @@ NSUInteger editPlayer;
             pickedHandicap = intPortion +  pickedRow/10;
             break;
         case 3: // Tees
-            pickedPlayerTees = row;
+            pickedPlayerTees = row;  // BUG  womens White Tees Spelling mistake  if player 4, doesn't write out NZCR = row; //
             break;
     }
 

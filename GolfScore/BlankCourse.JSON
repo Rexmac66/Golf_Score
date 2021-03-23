@@ -5,7 +5,7 @@
         [
           {
             "Length": 0,
-            "Par": 0,
+            "Par": 4,
             "Stroke": 0
           }
         ]
@@ -20,7 +20,7 @@
         [
           {
             "Length": 0,
-            "Par": 0,
+            "Par": 4,
             "Stroke": 0
           }
         ]
@@ -35,7 +35,7 @@
         [
           {
             "Length": 0,
-            "Par": 0,
+            "Par": 4,
             "Stroke": 0
           }
         ]
@@ -50,7 +50,7 @@
         [
           {
             "Length": 0,
-            "Par": 0,
+            "Par": 4,
             "Stroke": 0
           }
         ]
@@ -65,7 +65,7 @@
         [
           {
             "Length": 0,
-            "Par": 0,
+            "Par": 4,
             "Stroke": 0
           }
         ]
@@ -80,7 +80,7 @@
         [
           {
             "Length": 0,
-            "Par": 0,
+            "Par": 4,
             "Stroke": 0
           }
         ]
@@ -95,7 +95,7 @@
         [
           {
             "Length": 0,
-            "Par": 0,
+            "Par": 4,
             "Stroke": 0
           }
         ]
@@ -110,7 +110,7 @@
         [
           {
             "Length": 0,
-            "Par": 0,
+            "Par": 4,
             "Stroke": 0
           }
         ]
@@ -125,7 +125,7 @@
         [
           {
             "Length": 0,
-            "Par": 0,
+            "Par": 4,
             "Stroke": 0
           }
         ]
@@ -140,7 +140,7 @@
         [
           {
             "Length": 0,
-            "Par": 0,
+            "Par": 4,
             "Stroke": 0
           }
         ]
@@ -155,7 +155,7 @@
         [
           {
             "Length": 0,
-            "Par": 0,
+            "Par": 4,
             "Stroke": 0
           }
         ]
@@ -170,7 +170,7 @@
         [
           {
             "Length": 0,
-            "Par": 0,
+            "Par": 4,
             "Stroke": 0
           }
         ]
@@ -185,7 +185,7 @@
         [
           {
             "Length": 0,
-            "Par": 0,
+            "Par": 4,
             "Stroke": 0
           }
         ]
@@ -200,7 +200,7 @@
         [
           {
             "Length": 0,
-            "Par": 0,
+            "Par": 4,
             "Stroke": 0
           }
         ]
@@ -215,7 +215,7 @@
         [
           {
             "Length": 0,
-            "Par": 0,
+            "Par": 4,
             "Stroke": 0
           }
         ]
@@ -230,7 +230,7 @@
         [
           {
             "Length": 0,
-            "Par": 0,
+            "Par": 4,
             "Stroke": 0
           }
         ]
@@ -245,7 +245,7 @@
         [
           {
             "Length": 0,
-            "Par": 0,
+            "Par": 4,
             "Stroke": 0
           }
         ]
@@ -260,7 +260,7 @@
         [
           {
             "Length": 0,
-            "Par": 0,
+            "Par": 4,
             "Stroke": 0
           }
         ]
@@ -284,6 +284,7 @@
           "Title": "White",
           "Slope": 113,
           "Par": 72,
+          "NZCR":72,
           "TeeIndex": 0
         }
       ]

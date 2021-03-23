@@ -85,8 +85,10 @@ NSArray *teeColors;
 
     if (puttNumber > 0) {
         [puttBox setTitle: [NSString stringWithFormat:@"Putts:%i",puttNumber] forState:UIControlStateNormal];
+        puttBox.titleLabel.font = [UIFont systemFontOfSize:31];
     } else {
         [puttBox setTitle:[NSString stringWithFormat:@"Putt"] forState:UIControlStateNormal];
+        puttBox.titleLabel.font = [UIFont systemFontOfSize:31];
     }
     if (penaltyNumber > 0) {
         [penaltyBox setTitle:[NSString stringWithFormat:@"Penalties:%i",penaltyNumber] forState:UIControlStateNormal];
@@ -792,7 +794,7 @@ NSArray *teeColors;
 {
     NSUInteger playerPointer = [[playersGame objectForKey:@"PlayerPointer"]intValue];
     if (playerPointer >= appDelegate.playersArray.count) {
-        playerPointer = appDelegate.playersArray.count -1; // backup to last good iten -- we'll be in trouble if all items deleted - wait let's not dele last item!
+        playerPointer = appDelegate.playersArray.count -1; // backup to last good iten -- we'll be in trouble if all items deleted - wait let's not delete last item!
     }
     NSString *refreshName =  [[appDelegate.playersArray objectAtIndex:playerPointer]objectForKey:@"Name"];
     [playersGame setObject:refreshName forKey:@"Name"];

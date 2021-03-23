@@ -37,6 +37,8 @@
      IBOutlet UIPickerView *divisionPicker;
      IBOutlet UIPickerView *teesPicker;
      IBOutlet UIPickerView *slopePicker;
+    IBOutlet UIPickerView *nzcrPicker;
+    IBOutlet UIPickerView *nzcrDecimal;
     
     __weak IBOutlet UILabel *parTextBox;
 }
