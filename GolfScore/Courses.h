@@ -39,6 +39,7 @@
      IBOutlet UIPickerView *slopePicker;
     IBOutlet UIPickerView *nzcrPicker;
     IBOutlet UIPickerView *nzcrDecimal;
+    __weak IBOutlet UIPickerView *parPicker;
     
     __weak IBOutlet UILabel *parTextBox;
 }

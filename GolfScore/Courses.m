@@ -25,6 +25,7 @@ NSArray *teesStrings;
 // float  pickedNZCR;
 int pickedNZCRInt;
 int pickedNZCRFrac;
+int pickedPar;
 
 NSUInteger editCourse;
 NSString *editedCourseName;
@@ -103,6 +104,9 @@ NSString *revertCourseName; // keep name for delete or cancel
           case 4:
               return 30.0;
               break;
+          case 5:
+              return 30.0;
+              break;
         default:
               return 20.0;
               break;
@@ -128,6 +132,8 @@ NSString *revertCourseName; // keep name for delete or cancel
         case 4:
             return 10;
             break;
+        case 5:
+            return 30;
         default:
             return 1;
             break;
@@ -189,7 +195,7 @@ NSString *revertCourseName; // keep name for delete or cancel
             tView.textAlignment = NSTextAlignmentCenter;
             tView.text = [NSString stringWithFormat:@"%li",row+55];
             break;
-        case 3:     // NZCR
+        case 3:     // NZCR Integer
             tView.font = [UIFont boldSystemFontOfSize:28.0];
             tView.textAlignment = NSTextAlignmentCenter;
             tView.text = [NSString stringWithFormat:@"%li  ",row + 50];
@@ -198,6 +204,11 @@ NSString *revertCourseName; // keep name for delete or cancel
             tView.font = [UIFont boldSystemFontOfSize:28.0];
             tView.textAlignment = NSTextAlignmentLeft;
             tView.text = [NSString stringWithFormat:@"  .%li",row];
+            break;
+        case 5:     // Par
+            tView.font = [UIFont boldSystemFontOfSize:28.0];
+            tView.textAlignment = NSTextAlignmentCenter;
+            tView.text = [NSString stringWithFormat:@"%li",row + 50];
             break;
         default:
 
@@ -209,7 +220,7 @@ NSString *revertCourseName; // keep name for delete or cancel
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     switch (pickerView.tag) {
-        case 0:                 // 0 = Men / 1 = Women / 2 = Slope / 3 = NZCRInt / 4 = NZCRFrac
+        case 0:                 // 0 = Men / 1 = Women / 2 = Slope / 3 = NZCRInt / 4 = NZCRFrac / Par
             pickedCourseDivision = row;
             teesInDivision = [[[[appCDelegate.courseData objectForKey:@"Divisions"] objectAtIndex:pickedCourseDivision] objectForKey:@"Tees"] count] ;
             [teesPicker reloadAllComponents];
@@ -235,12 +246,16 @@ NSString *revertCourseName; // keep name for delete or cancel
         case 4:
             pickedNZCRFrac = (int)(row) ;
             break;
+        case 5:
+             pickedPar = (int) row +50;
+            break;
         default:
             break;
     }
     [slopePicker selectRow:pickedSlope - 55 inComponent:0 animated:YES];
     [nzcrPicker selectRow:(pickedNZCRInt - 50) inComponent:0 animated:YES];
     [nzcrDecimal selectRow:pickedNZCRFrac inComponent:0 animated:YES];
+    [parPicker selectRow:(pickedPar - 50) inComponent:0 animated:YES];
 
     [self SaveChanges];
 }
@@ -258,25 +273,37 @@ NSString *revertCourseName; // keep name for delete or cancel
                       objectAtIndex:pickedTees]
                       objectForKey:@"Par"]intValue];
     }
-    NSLog(@"---+++ Par Round: %i", parTotal);
-    parTextBox.text = [NSString stringWithFormat:@"Par Calc:%i",parTotal];
+    pickedPar = [[[[[[appCDelegate.courseData objectForKey:@"Divisions"] objectAtIndex:pickedCourseDivision]
+                      objectForKey:@"Tees"] objectAtIndex:pickedTees]
+                    objectForKey:@"Par"]intValue];
+    
+    NSLog(@"---+++ Course Par: %i Totaled: %i", pickedPar, parTotal);
+    parTextBox.text = [NSString stringWithFormat:@"Calc:%i",parTotal];
 }
 
--(void)SaveChanges  // save changed slope as we go, 'cause there are many facets -- cancel will reload the course
+-(void)SaveChanges  // save changed slope/NZCR/Par as we go, 'cause there are many facets -- cancel will reload the course
 {
     NSString *pickedDivisionTitle = [NSString stringWithString:[[[appCDelegate.courseData objectForKey:@"Divisions"] objectAtIndex:pickedCourseDivision]    objectForKey:@"Title"]];
     NSString *pickedTeesName = [NSString stringWithString:[[[[[appCDelegate.courseData objectForKey:@"Divisions"] objectAtIndex:pickedCourseDivision]
                                                          objectForKey:@"Tees"] objectAtIndex:pickedTees]
                                                        objectForKey:@"Title"]];
-    NSLog(@"---+++ Results to save: \n%@ \n Division: %lu %@\n Tees: %lu %@\n Slope: %lu ",editedCourseName, (unsigned long)pickedCourseDivision, pickedDivisionTitle, (unsigned long)pickedTees, pickedTeesName, (unsigned long)pickedSlope);
-    
-    [[[[[appCDelegate.courseData objectForKey:@"Divisions"] objectAtIndex:pickedCourseDivision]
-        objectForKey:@"Tees"] objectAtIndex:pickedTees]
-        setObject:[NSNumber numberWithInt:(int)pickedSlope] forKey:@"Slope"];
     float NZCRfloat = pickedNZCRInt + pickedNZCRFrac / 10.0;
     [[[[[appCDelegate.courseData objectForKey:@"Divisions"] objectAtIndex:pickedCourseDivision]
                       objectForKey:@"Tees"] objectAtIndex:pickedTees]
       setObject:[NSNumber numberWithFloat:NZCRfloat] forKey:@"NZCR"];
+//    int coursePar = [[[[[[appCDelegate.courseData objectForKey:@"Divisions"] objectAtIndex:pickedCourseDivision]
+//                      objectForKey:@"Tees"] objectAtIndex:pickedTees]
+//                    objectForKey:@"Par"]intValue];
+    [[[[[appCDelegate.courseData objectForKey:@"Divisions"] objectAtIndex:pickedCourseDivision]
+                      objectForKey:@"Tees"] objectAtIndex:pickedTees]
+      setObject:[NSNumber numberWithInt:pickedPar] forKey:@"Par"];
+                   // setObjectForKey:@"Par"]intValue];
+    
+    NSLog(@"---+++ Results to save: \n%@ \n Division: %lu %@\n Tees: %lu %@\n Slope: %lu \n NZCR: %.1f \n Par: %i",editedCourseName, (unsigned long)pickedCourseDivision, pickedDivisionTitle, (unsigned long)pickedTees, pickedTeesName, (unsigned long)pickedSlope, NZCRfloat, pickedPar);
+    
+    [[[[[appCDelegate.courseData objectForKey:@"Divisions"] objectAtIndex:pickedCourseDivision]
+        objectForKey:@"Tees"] objectAtIndex:pickedTees]
+        setObject:[NSNumber numberWithInt:(int)pickedSlope] forKey:@"Slope"];
     
 }
 
@@ -325,6 +352,7 @@ NSString *revertCourseName; // keep name for delete or cancel
                          [self->nzcrPicker selectRow:(pickedNZCRInt - 50) inComponent:0 animated:YES];
                          [self->nzcrDecimal selectRow:(pickedNZCRFrac) inComponent:0 animated:YES];
                          [self getPar];
+                         [self->parPicker selectRow:(pickedPar) - 50 inComponent:0 animated:YES];
                      }];
     
     pickedCourseDivision = 0;
