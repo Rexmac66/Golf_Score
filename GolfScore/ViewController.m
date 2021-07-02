@@ -751,11 +751,13 @@ NSArray *teeColors;
             tView.text = [NSString stringWithFormat:@" #%i",(int)row+1 ];
             break;
         case 1:
-            tView.font = [UIFont boldSystemFontOfSize:30.0];
+            tView.font = [UIFont boldSystemFontOfSize:28.0];
+            tView.textAlignment = NSTextAlignmentCenter;
             tView.text = [NSString stringWithFormat:@"Par:%i",(int)row+3 ];
             break;
         case 2:
-            tView.font = [UIFont boldSystemFontOfSize:30.0];
+            tView.font = [UIFont boldSystemFontOfSize:28.0];
+            tView.textAlignment = NSTextAlignmentCenter;
             tView.text = [NSString stringWithFormat:@"Stroke:%i",(int)row+1 ];
         default:
             break;

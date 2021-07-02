@@ -461,6 +461,7 @@ NSString *revertCourseName; // keep name for delete or cancel
     [courseTable reloadData];
     savedCourseName = [appCDelegate.courseData objectForKey:@"Name"];  // save current course in use for cancel ??
     // TODO when writing out course, will have to delete old course if name changed!
+    // TODO check if blank course is renamed - if name "Blank Course" is missing can crash
 }
 
 

@@ -1,19 +1,23 @@
 {
   "Holes" : [
     {
+      "Number" : 1,
+      "Long" : 175.13872825556911,
+      "Title" : "Hole name",
+      "Lat" : -40.733499010131453,
       "Divisions" : [
+        [
+          {
+            "Par" : 5,
+            "Length" : 0,
+            "Stroke" : 17
+          }
+        ],
         [
           {
             "Par" : 5,
             "Length" : 0,
             "Stroke" : 9
-          }
-        ],
-        [
-          {
-            "Par" : 5,
-            "Length" : 0,
-            "Stroke" : 11
           },
           {
             "Par" : 4,
@@ -21,40 +25,148 @@
             "Stroke" : 1
           }
         ]
-      ],
-      "Long" : 175.54103412681769,
-      "Title" : "Hole name",
-      "Number" : 1,
-      "Lat" : -41.003054394424893
+      ]
     },
     {
-      "Divisions" : [
-        [
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 1
-          }
-        ],
-        [
-          {
-            "Par" : 5,
-            "Length" : 0,
-            "Stroke" : 7
-          },
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 1
-          }
-        ]
-      ],
-      "Long" : 175.5433850830193,
-      "Title" : "Hole name",
       "Number" : 2,
-      "Lat" : -40.999719193243422
+      "Long" : 175.13829901830769,
+      "Title" : "Hole name",
+      "Lat" : -40.735767781772402,
+      "Divisions" : [
+        [
+          {
+            "Par" : 4,
+            "Length" : 0,
+            "Stroke" : 15
+          }
+        ],
+        [
+          {
+            "Par" : 4,
+            "Length" : 0,
+            "Stroke" : 5
+          },
+          {
+            "Par" : 4,
+            "Length" : 0,
+            "Stroke" : 1
+          }
+        ]
+      ]
     },
     {
+      "Number" : 3,
+      "Long" : 175.13680192658231,
+      "Title" : "Hole name",
+      "Lat" : -40.735308327750047,
+      "Divisions" : [
+        [
+          {
+            "Par" : 3,
+            "Length" : 0,
+            "Stroke" : 9
+          }
+        ],
+        [
+          {
+            "Par" : 3,
+            "Length" : 0,
+            "Stroke" : 15
+          },
+          {
+            "Par" : 4,
+            "Length" : 0,
+            "Stroke" : 1
+          }
+        ]
+      ]
+    },
+    {
+      "Number" : 4,
+      "Long" : 175.1380340663485,
+      "Title" : "Hole name",
+      "Lat" : -40.733074299097737,
+      "Divisions" : [
+        [
+          {
+            "Par" : 4,
+            "Length" : 0,
+            "Stroke" : 13
+          }
+        ],
+        [
+          {
+            "Par" : 4,
+            "Length" : 0,
+            "Stroke" : 11
+          },
+          {
+            "Par" : 4,
+            "Length" : 0,
+            "Stroke" : 1
+          }
+        ]
+      ]
+    },
+    {
+      "Number" : 5,
+      "Long" : 175.14244898238701,
+      "Title" : "Hole name",
+      "Lat" : -40.734791709148077,
+      "Divisions" : [
+        [
+          {
+            "Par" : 4,
+            "Length" : 0,
+            "Stroke" : 1
+          }
+        ],
+        [
+          {
+            "Par" : 5,
+            "Length" : 0,
+            "Stroke" : 13
+          },
+          {
+            "Par" : 4,
+            "Length" : 0,
+            "Stroke" : 1
+          }
+        ]
+      ]
+    },
+    {
+      "Number" : 6,
+      "Long" : 175.14374381878889,
+      "Title" : "Hole name",
+      "Lat" : -40.73506625838646,
+      "Divisions" : [
+        [
+          {
+            "Par" : 3,
+            "Length" : 0,
+            "Stroke" : 11
+          }
+        ],
+        [
+          {
+            "Par" : 3,
+            "Length" : 0,
+            "Stroke" : 17
+          },
+          {
+            "Par" : 4,
+            "Length" : 0,
+            "Stroke" : 1
+          }
+        ]
+      ]
+    },
+    {
+      "Number" : 7,
+      "Long" : 175.1455565729878,
+      "Title" : "Hole name",
+      "Lat" : -40.736650563814429,
       "Divisions" : [
         [
           {
@@ -67,7 +179,7 @@
           {
             "Par" : 4,
             "Length" : 0,
-            "Stroke" : 5
+            "Stroke" : 7
           },
           {
             "Par" : 4,
@@ -75,397 +187,19 @@
             "Stroke" : 1
           }
         ]
-      ],
-      "Long" : 175.54401707851841,
-      "Title" : "Hole name",
-      "Number" : 3,
-      "Lat" : -41.00262130148802
+      ]
     },
     {
-      "Divisions" : [
-        [
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 11
-          }
-        ],
-        [
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 10
-          },
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 1
-          }
-        ]
-      ],
-      "Long" : 175.54077705384751,
-      "Title" : "Hole name",
-      "Number" : 4,
-      "Lat" : -41.00357780236844
-    },
-    {
-      "Divisions" : [
-        [
-          {
-            "Par" : 5,
-            "Length" : 0,
-            "Stroke" : 15
-          }
-        ],
-        [
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 9
-          },
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 1
-          }
-        ]
-      ],
-      "Long" : 175.53813759253879,
-      "Title" : "Hole name",
-      "Number" : 5,
-      "Lat" : -41.000781767108478
-    },
-    {
-      "Divisions" : [
-        [
-          {
-            "Par" : 3,
-            "Length" : 0,
-            "Stroke" : 13
-          }
-        ],
-        [
-          {
-            "Par" : 3,
-            "Length" : 0,
-            "Stroke" : 15
-          },
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 1
-          }
-        ]
-      ],
-      "Long" : 175.53992201590489,
-      "Title" : "Hole name",
-      "Number" : 6,
-      "Lat" : -41.002626959272661
-    },
-    {
-      "Divisions" : [
-        [
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 5
-          }
-        ],
-        [
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 4
-          },
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 1
-          }
-        ]
-      ],
-      "Long" : 175.5401685276772,
-      "Title" : "Hole name",
-      "Number" : 7,
-      "Lat" : -40.999031961002387
-    },
-    {
-      "Divisions" : [
-        [
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 3
-          }
-        ],
-        [
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 2
-          },
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 1
-          }
-        ]
-      ],
-      "Long" : 175.53752479159789,
-      "Title" : "Hole name",
       "Number" : 8,
-      "Lat" : -40.99717247769329
-    },
-    {
-      "Divisions" : [
-        [
-          {
-            "Par" : 3,
-            "Length" : 0,
-            "Stroke" : 10
-          }
-        ],
-        [
-          {
-            "Par" : 3,
-            "Length" : 0,
-            "Stroke" : 17
-          },
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 1
-          }
-        ]
-      ],
-      "Long" : 175.5403282867517,
+      "Long" : 175.14047672767654,
       "Title" : "Hole name",
-      "Number" : 9,
-      "Lat" : -40.996459932104678
-    },
-    {
-      "Divisions" : [
-        [
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 18
-          }
-        ],
-        [
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 12
-          },
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 1
-          }
-        ]
-      ],
-      "Long" : 175.54078241826551,
-      "Title" : "Hole name",
-      "Number" : 10,
-      "Lat" : -40.998576236926951
-    },
-    {
-      "Divisions" : [
-        [
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 12
-          }
-        ],
-        [
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 6
-          },
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 1
-          }
-        ]
-      ],
-      "Long" : 175.54160526779788,
-      "Title" : "Hole name",
-      "Number" : 11,
-      "Lat" : -40.995699458050368
-    },
-    {
-      "Divisions" : [
-        [
-          {
-            "Par" : 3,
-            "Length" : 0,
-            "Stroke" : 14
-          }
-        ],
-        [
-          {
-            "Par" : 3,
-            "Length" : 0,
-            "Stroke" : 16
-          },
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 1
-          }
-        ]
-      ],
-      "Long" : 175.5402971060719,
-      "Title" : "Hole name",
-      "Number" : 12,
-      "Lat" : -40.995737537779839
-    },
-    {
-      "Divisions" : [
-        [
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 2
-          }
-        ],
-        [
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 1
-          },
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 1
-          }
-        ]
-      ],
-      "Long" : 175.53599366934549,
-      "Title" : "Hole name",
-      "Number" : 13,
-      "Lat" : -40.996920601502993
-    },
-    {
-      "Divisions" : [
-        [
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 8
-          }
-        ],
-        [
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 8
-          },
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 1
-          }
-        ]
-      ],
-      "Long" : 175.5394582452025,
-      "Title" : "Hole name",
-      "Number" : 14,
-      "Lat" : -40.99596556745562
-    },
-    {
-      "Divisions" : [
-        [
-          {
-            "Par" : 3,
-            "Length" : 0,
-            "Stroke" : 16
-          }
-        ],
-        [
-          {
-            "Par" : 3,
-            "Length" : 0,
-            "Stroke" : 18
-          },
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 1
-          }
-        ]
-      ],
-      "Long" : 175.54115725697531,
-      "Title" : "Hole name",
-      "Number" : 15,
-      "Lat" : -40.996221676507027
-    },
-    {
-      "Divisions" : [
-        [
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 17
-          }
-        ],
-        [
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 13
-          },
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 1
-          }
-        ]
-      ],
-      "Long" : 175.54135892556559,
-      "Title" : "Hole name",
-      "Number" : 16,
-      "Lat" : -40.998338023238823
-    },
-    {
-      "Divisions" : [
-        [
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 4
-          }
-        ],
-        [
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 14
-          },
-          {
-            "Par" : 4,
-            "Length" : 0,
-            "Stroke" : 1
-          }
-        ]
-      ],
-      "Long" : 175.54007289016201,
-      "Title" : "Hole name",
-      "Number" : 17,
-      "Lat" : -41.001768526659347
-    },
-    {
+      "Lat" : -40.734509784575749,
       "Divisions" : [
         [
           {
             "Par" : 5,
             "Length" : 0,
-            "Stroke" : 6
+            "Stroke" : 3
           }
         ],
         [
@@ -480,29 +214,295 @@
             "Stroke" : 1
           }
         ]
-      ],
-      "Long" : 175.54177416504879,
+      ]
+    },
+    {
+      "Number" : 9,
+      "Long" : 175.1426620503656,
       "Title" : "Hole name",
+      "Lat" : -40.736246849448172,
+      "Divisions" : [
+        [
+          {
+            "Par" : 4,
+            "Length" : 0,
+            "Stroke" : 5
+          }
+        ],
+        [
+          {
+            "Par" : 4,
+            "Length" : 0,
+            "Stroke" : 1
+          },
+          {
+            "Par" : 4,
+            "Length" : 0,
+            "Stroke" : 1
+          }
+        ]
+      ]
+    },
+    {
+      "Number" : 10,
+      "Long" : 175.14530447633186,
+      "Title" : "Hole name",
+      "Lat" : -40.737532493942695,
+      "Divisions" : [
+        [
+          {
+            "Par" : 4,
+            "Length" : 0,
+            "Stroke" : 6
+          }
+        ],
+        [
+          {
+            "Par" : 4,
+            "Length" : 0,
+            "Stroke" : 6
+          },
+          {
+            "Par" : 4,
+            "Length" : 0,
+            "Stroke" : 1
+          }
+        ]
+      ]
+    },
+    {
+      "Number" : 11,
+      "Long" : 175.14220473372859,
+      "Title" : "Hole name",
+      "Lat" : -40.738467047960249,
+      "Divisions" : [
+        [
+          {
+            "Par" : 4,
+            "Length" : 0,
+            "Stroke" : 16
+          }
+        ],
+        [
+          {
+            "Par" : 4,
+            "Length" : 0,
+            "Stroke" : 12
+          },
+          {
+            "Par" : 4,
+            "Length" : 0,
+            "Stroke" : 1
+          }
+        ]
+      ]
+    },
+    {
+      "Number" : 12,
+      "Long" : 175.14269188994089,
+      "Title" : "Hole name",
+      "Lat" : -40.739268274084417,
+      "Divisions" : [
+        [
+          {
+            "Par" : 3,
+            "Length" : 0,
+            "Stroke" : 10
+          }
+        ],
+        [
+          {
+            "Par" : 3,
+            "Length" : 0,
+            "Stroke" : 16
+          },
+          {
+            "Par" : 4,
+            "Length" : 0,
+            "Stroke" : 1
+          }
+        ]
+      ]
+    },
+    {
+      "Number" : 13,
+      "Long" : 175.13833380320591,
+      "Title" : "Hole name",
+      "Lat" : -40.737965181507853,
+      "Divisions" : [
+        [
+          {
+            "Par" : 5,
+            "Length" : 0,
+            "Stroke" : 8
+          }
+        ],
+        [
+          {
+            "Par" : 5,
+            "Length" : 0,
+            "Stroke" : 8
+          },
+          {
+            "Par" : 4,
+            "Length" : 0,
+            "Stroke" : 1
+          }
+        ]
+      ]
+    },
+    {
+      "Number" : 14,
+      "Long" : 175.13850521312571,
+      "Title" : "Hole name",
+      "Lat" : -40.736856213808743,
+      "Divisions" : [
+        [
+          {
+            "Par" : 3,
+            "Length" : 0,
+            "Stroke" : 18
+          }
+        ],
+        [
+          {
+            "Par" : 3,
+            "Length" : 0,
+            "Stroke" : 18
+          },
+          {
+            "Par" : 4,
+            "Length" : 0,
+            "Stroke" : 1
+          }
+        ]
+      ]
+    },
+    {
+      "Number" : 15,
+      "Long" : 175.1420283784858,
+      "Title" : "Hole name",
+      "Lat" : -40.737672233992008,
+      "Divisions" : [
+        [
+          {
+            "Par" : 4,
+            "Length" : 0,
+            "Stroke" : 4
+          }
+        ],
+        [
+          {
+            "Par" : 4,
+            "Length" : 0,
+            "Stroke" : 4
+          },
+          {
+            "Par" : 4,
+            "Length" : 0,
+            "Stroke" : 1
+          }
+        ]
+      ]
+    },
+    {
+      "Number" : 16,
+      "Long" : 175.13896177539149,
+      "Title" : "Hole name",
+      "Lat" : -40.735520599447867,
+      "Divisions" : [
+        [
+          {
+            "Par" : 4,
+            "Length" : 0,
+            "Stroke" : 2
+          }
+        ],
+        [
+          {
+            "Par" : 4,
+            "Length" : 0,
+            "Stroke" : 2
+          },
+          {
+            "Par" : 4,
+            "Length" : 0,
+            "Stroke" : 1
+          }
+        ]
+      ]
+    },
+    {
+      "Number" : 17,
+      "Long" : 175.1388595999918,
+      "Title" : "Hole name",
+      "Lat" : -40.734107494392177,
+      "Divisions" : [
+        [
+          {
+            "Par" : 3,
+            "Length" : 0,
+            "Stroke" : 12
+          }
+        ],
+        [
+          {
+            "Par" : 3,
+            "Length" : 0,
+            "Stroke" : 14
+          },
+          {
+            "Par" : 4,
+            "Length" : 0,
+            "Stroke" : 1
+          }
+        ]
+      ]
+    },
+    {
       "Number" : 1,
-      "Lat" : -40.998866963238463
+      "Long" : 175.1429956501118,
+      "Title" : "Hole name",
+      "Lat" : -40.736984415017751,
+      "Divisions" : [
+        [
+          {
+            "Par" : 5,
+            "Length" : 0,
+            "Stroke" : 14
+          }
+        ],
+        [
+          {
+            "Par" : 5,
+            "Length" : 0,
+            "Stroke" : 10
+          },
+          {
+            "Par" : 4,
+            "Length" : 0,
+            "Stroke" : 1
+          }
+        ]
+      ]
     }
   ],
-  "Name" : "Akaroa",
+  "Name" : "Otaki",
   "Divisions" : [
     {
       "Title" : "Men",
       "Tees" : [
         {
-          "Slope" : 118,
-          "NZCR" : 72,
+          "Slope" : 110,
+          "NZCR" : 68.400001525878906,
           "TeeIndex" : 0,
           "TeeColor" : [
             1,
-            1,
-            1
+            0.5,
+            0
           ],
-          "Title" : "White",
-          "Par" : 72
+          "Title" : "Orange",
+          "Par" : 71
         }
       ]
     },
@@ -510,19 +510,19 @@
       "Title" : "Women",
       "Tees" : [
         {
-          "Slope" : 113,
+          "Slope" : 126,
           "NZCR" : 72,
           "TeeIndex" : 0,
           "TeeColor" : [
             1,
-            1,
+            0,
             0
           ],
-          "Title" : "Yellow",
-          "Par" : 72
+          "Title" : "Red",
+          "Par" : 73
         },
         {
-          "Slope" : 113,
+          "Slope" : 127,
           "TeeIndex" : 0,
           "TeeColor" : [
             1,
